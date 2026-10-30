@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Laravel Policies</title>
+    <link rel='shortcut icon' href="{{ asset('assets/images/favicon.png') }}" type='image/png'>
+    <link rel='stylesheet' href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">
+    <link rel='stylesheet' href="{{ asset('assets/fontawesome/css/all.min.css') }}">
+    <link rel='stylesheet' href="{{ asset('assets/css/main.css') }}">
+</head>
+<body>
+    @auth
+        <x-user-bar />
+        @else
+            @include('layouts.topbar')
+    @endauth
+    
+
+    @yield('content')
+
+    <script src="{{ asset('assets/boostrap/boostrap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+</body>
+</html>
